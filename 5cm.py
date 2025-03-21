@@ -2,7 +2,6 @@ import time
 import sys
 
 def animate_text(text, delay=0.1):
-    """Menampilkan teks per karakter dengan jeda waktu."""
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
@@ -10,7 +9,6 @@ def animate_text(text, delay=0.1):
     print()
 
 def sing_song():
-    """Menampilkan lirik lagu secara berurutan tanpa threading."""
     lyrics = [
         ("แค่ห่างกับเธอนิดเดียวก็จะตายแล้ว", 0.13),
         ("แค่ห่างกับเธอแป๊ปเดียวฉันก็ทนไม่ไหว", 0.13),
@@ -20,11 +18,11 @@ def sing_song():
         ("Heart skip a beat", 0.1),
     ]
 
-    delays = [0.4, 0.85, 1.5, 1.5, 5.0, 0.7]  # Jeda sebelum setiap baris
+    delays = [0.4, 0.85, 1.5, 1.5, 5.0, 0.7]
 
     for i in range(len(lyrics)):
         lyric, speed = lyrics[i]
-        time.sleep(delays[i])  # Menunggu sebelum menampilkan lirik berikutnya
+        time.sleep(delays[i])
         animate_text(lyric, speed)
 
 if __name__ == "__main__":
